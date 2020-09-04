@@ -1,0 +1,36 @@
+website
+- list of resources (links to other sites, maps, etc)
+- about 
+- map
+	- link to FDS 
+		- check out the API
+		- potentially autogenerate request text
+	- photo gallery of that particular location
+	- link to that antenna's profile page
+	- abandoned hardware that could be repurposed hermit crab style
+		- repurposed somehow?
+	- ability to add a new antenna to the map + guide
+- antenna profiles
+	- antenna profile page
+	- full details, who uses this kind of antenna, technical breakdown, animations 
+	- could also include link to DIY instructions
+- ability to just upload an antenna w/gps coords
+
+documentation
+- gathering 
+
+photography w/coords
+- gsm
+- wifi
+- all radio
+
+antenna research
+- create profile pages
+	- tech specs
+	- illustrations / animations
+	- plain language explanations
+	- which companies use them
+	- DIY instructions
+
+miscellaneous
+- (animated) sticker pack!
