@@ -21,7 +21,6 @@ services:
           aliases:
               - nginx
   nuxt:
-    env_file: .env.nuxt
     restart: always
     build: ./nuxt
     volumes:
@@ -40,7 +39,7 @@ services:
               - nuxt
 
   cms:
-    env_file: .env.cms
+    env_file: .env
     restart: always
     build: ./cms
     entrypoint: /usr/bin/entrypoint.sh
