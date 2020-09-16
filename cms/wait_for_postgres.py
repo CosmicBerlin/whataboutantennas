@@ -11,7 +11,7 @@ config = {
     "dbname": os.getenv("POSTGRES_DB"),
     "user": os.getenv("POSTGRES_USER"),
     "password": os.getenv("POSTGRES_PASSWORD"),
-    "host": os.getenv("DATABASE_URL", "postgres")
+    "host": os.getenv("DATABASE_URL")
 }
 
 start_time = time()

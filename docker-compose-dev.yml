@@ -5,7 +5,9 @@ networks:
 
 services:
   nginx:
-    build: ./nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
     restart: unless-stopped
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     ports:
@@ -21,9 +23,10 @@ services:
           aliases:
               - nginx
   nuxt:
-    env_file: .env.nuxt
     restart: always
-    build: ./nuxt
+    build: 
+      context: ./nuxt
+      dockerfile: Dockerfile.dev
     volumes:
       - ./nuxt:/app
       - /app/node_modules
@@ -40,7 +43,7 @@ services:
               - nuxt
 
   cms:
-    env_file: .env.cms
+    env_file: .env
     restart: always
     build: ./cms
     entrypoint: /usr/bin/entrypoint.sh

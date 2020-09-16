@@ -5,8 +5,8 @@ WORKDIR /app
 
 RUN npm i -g yarn --force
 RUN yarn install
-#RUN yarn build
+RUN yarn build
 
 ENV HOST 0.0.0.0
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]
