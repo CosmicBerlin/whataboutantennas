@@ -33,8 +33,6 @@ services:
     volumes:
       - ./cloud/config:/config
       - ./cloud/data:/data
-    expose:
-      - 8001
     restart: unless-stopped
     networks:
       antennanet:
