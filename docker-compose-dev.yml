@@ -22,6 +22,25 @@ services:
       antennanet:
           aliases:
               - nginx
+
+  nextcloud:
+    env_file: .env.cloud
+    container_name: nextcloud
+    image: linuxserver/nextcloud
+    hostname: "cloud.antennafield.guide"
+    extra_hosts:
+      - 'postgres:172.17.0.1'
+    volumes:
+      - ./cloud/config:/config
+      - ./cloud/data:/data
+    expose:
+      - 8001
+    restart: unless-stopped
+    networks:
+      antennanet:
+          aliases:
+              - nextcloud
+              
   nuxt:
     restart: always
     build: 

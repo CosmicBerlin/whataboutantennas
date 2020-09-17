@@ -2,6 +2,8 @@ version: '3.7'
 
 networks:
   antennanet:
+      external:
+          name: antennanet
 
 services:
   nginx:
@@ -20,18 +22,20 @@ services:
       antennanet:
           aliases:
               - nginx
+              
   nextcloud:
     env_file: .env.cloud
-    image: linuxserver/nextcloud
     container_name: nextcloud
+    image: linuxserver/nextcloud
+    hostname: "cloud.antennafield.guide"
+    extra_hosts:
+      - 'postgres:172.17.0.1'
     volumes:
       - ./cloud/config:/config
       - ./cloud/data:/data
     expose:
       - 8001
     restart: unless-stopped
-    extra_hosts:
-      - 'postgres:172.17.0.1'
     networks:
       antennanet:
           aliases:
